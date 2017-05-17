@@ -24,7 +24,8 @@ case $1 in
   ;;
 esac
 
-TOOLCHAIN_PREFIX=${BASEDIR}/toolchain-android
+#TOOLCHAIN_PREFIX=${BASEDIR}/toolchain-android
+TOOLCHAIN_PREFIX=${ANDROID_NDK}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64
 if [ ! -d "$TOOLCHAIN_PREFIX" ]; then
   ${ANDROID_NDK_ROOT_PATH}/build/tools/make-standalone-toolchain.sh --toolchain=${NDK_TOOLCHAIN_ABI}-${NDK_TOOLCHAIN_ABI_VERSION} --platform=android-${ANDROID_API_VERSION} --install-dir=${TOOLCHAIN_PREFIX}
 fi
